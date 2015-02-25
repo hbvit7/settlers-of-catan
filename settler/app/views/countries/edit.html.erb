@@ -1,6 +1,15 @@
 <h1>Editing Country</h1>
 
-<%= render 'form' %>
+<%= form_for(@country) do |form| %>
+  <div class="field">
+    BLAH
+  </div>
+  <%= render form %>
+  <div class="actions">
+    <%= form.submit 'Save Changes' %>
+    <%= link_to "Cancel", country_path(@country) %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @country %> |
 <%= link_to 'Back', countries_path %>
