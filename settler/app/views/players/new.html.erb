@@ -1,0 +1,24 @@
+<h1>New Player</h1>
+
+<%= render 'form' %>
+
+<%= form_tag login_path do %>
+
+<h1> Existing players, login </h1>
+
+<div class="field">
+<%= label_tag :email %>
+<%= email_field_tag :email, params[:email] %><br>
+</div>
+
+<div class="field">
+<%= label_tag :password %>
+<%= password_field_tag :password, params[:password] %><br>
+</div>
+
+<div class="submit">
+  <%= submit_tag("Login") %>
+</div>
+
+<% end %>
+<%= link_to 'Back', players_path %>
