@@ -29,7 +29,7 @@
         <td><%= country.tax_rate %></td>
         <td><%= country.wealth %></td>
         <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_country_path(country) %></td>
+        <td><%= link_to 'Edit', edit_player_country_path(country) %></td>
         <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+<%= link_to 'New Country', new_player_country_path %>
