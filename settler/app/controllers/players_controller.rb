@@ -54,6 +54,12 @@ class PlayersController < ApplicationController
     end
   end
 
+  def logout
+    @player = current_player
+    reset_session
+    redirect_to new_player_url
+  end
+
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
@@ -72,8 +78,9 @@ class PlayersController < ApplicationController
   # DELETE /players/1.json
   def destroy
     @player.destroy
+    reset_session
     respond_to do |format|
-      format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to new_player_url, notice: 'Player was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

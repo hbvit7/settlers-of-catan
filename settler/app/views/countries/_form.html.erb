@@ -4,43 +4,35 @@
     <div id="error_explanation">
       <h2><%= pluralize(@country.errors.count, "error") %> prohibited this country from being saved:</h2>
 
-    <ul>
-    <% @country.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+      <ul>
+      <% @country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.text_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :motto %><br>
+    <%= f.text_field :motto %>
+  </div>
+  <div class="field">
+    <%= f.label :employment %><br>
+    <%= f.text_field :employment %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_rate %><br>
+    <%= f.text_field :tax_rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
-
-<div class="field">
-  <%= form.label :name %><br>
-  <%= form.text_field :name %>
-</div>
-<div class="field">
-  <%= form.label :player_id %><br>
-  <%= form.text_field :player_id %>
-</div>
-<div class="field">
-  <%= form.label :flag %><br>
-  <%= form.text_field :flag %>
-</div>
-<div class="field">
-  <%= form.label :motto %><br>
-  <%= form.text_field :motto %>
-</div>
-<div class="field">
-  <%= form.label :population %><br>
-  <%= form.number_field :population %>
-</div>
-<div class="field">
-  <%= form.label :employment %><br>
-  <%= form.text_field :employment %>
-</div>
-<div class="field">
-  <%= form.label :tax_rate %><br>
-  <%= form.text_field :tax_rate %>
-</div>
-<div class="field">
-  <%= form.label :wealth %><br>
-  <%= form.number_field :wealth %>
-</div>

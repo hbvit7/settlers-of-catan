@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	root to: 'static#index'
+	root to: 'static#homepage'
 
   resources :players do
     resources :countries

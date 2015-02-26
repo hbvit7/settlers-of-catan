@@ -8,7 +8,9 @@
 </head>
 <body>
 <% if current_player %>
-<h2><%= current_player.name %></h2>
+<h2><%= current_player.name %></h2> 
+<%= form_tag logout_path %>
+<%= submit_tag("Logout") %>
 <% end %>
 <%= yield %>
 

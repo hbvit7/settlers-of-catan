@@ -4,8 +4,8 @@ class CreateCountryResources < ActiveRecord::Migration
       t.integer :country_id
       t.integer :resource_id
       t.integer :quantity
-      t.resource :references
-      t.country :references
+      t.references :resource
+      t.references :country
 
       t.timestamps null: false
     end

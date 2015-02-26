@@ -21,16 +21,16 @@
     <% @countries.each do |country| %>
       <tr>
         <td><%= country.name %></td>
-        <td><%= country.player %></td>
-        <td><%= country.flag %></td>
+        <td><%= country.player.name %></td>
+        <td><%= image_tag 'flags/'+File.basename(country.flag) %></td>
         <td><%= country.motto %></td>
         <td><%= country.population %></td>
         <td><%= country.employment %></td>
         <td><%= country.tax_rate %></td>
         <td><%= country.wealth %></td>
-        <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_player_country_path(country) %></td>
-        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', player_country_path(country.player, country) %></td>
+        <td><%= link_to 'Edit', edit_player_country_path(country.player, country) %></td>
+        <td><%= link_to 'Destroy', player_country_path(country.player, country), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
