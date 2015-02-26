@@ -5,4 +5,6 @@ class Player < ActiveRecord::Base
 	validates :email, uniqueness: true
 	validates :password, length: {minimum: 6, allow_nil: true}
 
+  has_one :country
+
 end
