@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Country.destroy_all
 Player.destroy_all
+Resource.destroy_all
 
 flags = Dir[Rails.root.join('app/assets/images/flags/*.png')]
 
@@ -77,4 +78,90 @@ Country.create!({
 	tax_rate: 0.04,
 	wealth: 3200000
 	})
+
+Resource.create!({
+	name: "Gold",
+	growth_factor: 0.1,
+	exchange_rate: 10
+	})
+
+Resource.create!({
+	name: "Silver",
+	growth_factor: 0.1,
+	exchange_rate: 0.7
+	})
+
+Resource.create!({
+	name: "Coal",
+	growth_factor: 0.5,
+	exchange_rate: 0.5
+	})
+
+Resource.create!({
+	name: "Iron",
+	growth_factor: 0.25,
+	exchange_rate: 0.5
+	})
+
+Resource.create!({
+	name: "Copper",
+	growth_factor: 0.2,
+	exchange_rate: 0.4
+	})
+
+Resource.create!({
+	name: "Oil",
+	growth_factor: 0.5,
+	exchange_rate: 0.6
+	})
+
+Resource.create!({
+	name: "Sheep",
+	growth_factor: 0.2,
+	exchange_rate: 0.2
+	})
+
+Resource.create!({
+	name: "Salt",
+	growth_factor: 0.2,
+	exchange_rate: 0.2
+	})
+
+Resource.create!({
+	name: "Fowl",
+	growth_factor: 0.3,
+	exchange_rate: 0.3
+	})
+
+Resource.create!({
+	name: "Beef",
+	growth_factor: 0.4,
+	exchange_rate: 0.3
+	})
+
+Resource.create!({
+	name: "Horses",
+	growth_factor: 0.2,
+	exchange_rate: 0.5
+	})
+
+Resource.create!({
+	name: "Incense",
+	growth_factor: 0.05,
+	exchange_rate: 0.55
+	})
+
+Resource.create!({
+	name: "Fish",
+	growth_factor: 0.3,
+	exchange_rate: 0.2
+	})
+
+Resource.create!({
+	name: "Stone",
+	growth_factor: 0.2,
+	exchange_rate: 0.4
+	})
+
+
 
