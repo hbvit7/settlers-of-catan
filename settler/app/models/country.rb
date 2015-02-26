@@ -1,5 +1,6 @@
 class Country < ActiveRecord::Base
 	belongs_to :player
+	has_many :resources, through: :country_resource	
 
 	after_create :set_population, :set_flag
 
@@ -15,5 +16,8 @@ class Country < ActiveRecord::Base
 		self.population = rand(0..100)
 		self.save!
 	end
-	
+
+	def assign_resource
+		 resource_id.shuffle.pop(rand(3..6))
+	end	
 end
