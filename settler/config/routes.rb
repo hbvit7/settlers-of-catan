@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   
   post "/login" => "players#login"
 
+  post "/logout" => "players#logout"
+
 end
