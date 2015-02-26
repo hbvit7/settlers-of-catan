@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :countries
 
-  resources :players
-
+  resources :players do
+    resources :countries
+  end
+  
   post "/login" => "players#login"
+
 end

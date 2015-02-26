@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :login_required, except: [:new, :create, :login]
 
   # GET /players
   # GET /players.json
@@ -28,6 +29,8 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
+        reset_session
+        session[:player_id] = @player.id
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @player }
       else
@@ -41,10 +44,12 @@ class PlayersController < ApplicationController
     @player = Player.find_by_email(params[:email])
 
     if @player && @player.authenticate(params[:password])
+      reset_session
       session[:player_id] = @player.id
 
       redirect_to player_path(@player)
     else 
+      @player = Player.new
       render :new, notice: "Invalid Password"
     end
   end

@@ -14,6 +14,7 @@ class CountriesController < ApplicationController
 
   # GET /countries/new
   def new
+    @player = current_player
     @country = Country.new
   end
 
